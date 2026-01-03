@@ -6,7 +6,7 @@ export default function GamificationBar() {
   const { theme } = useTheme();
 
   return (
-    <div className={`fixed top-[57px] sm:top-[65px] left-0 right-0 z-40 backdrop-blur-md border-b ${theme === 'dark' ? 'bg-[#0a0a0f]/95 border-white/10' : 'bg-white/95 border-gray-200'}`}>
+    <div className={`fixed top-[64px] sm:top-[73px] left-0 right-0 z-40 backdrop-blur-md border-b ${theme === 'dark' ? 'bg-[#0a0a0f]/95 border-white/10' : 'bg-white/95 border-gray-200'}`}>
       <div className="px-3 sm:px-6 py-2 sm:py-3">
         {/* Mobile Layout */}
         <div className="flex flex-col sm:hidden gap-2">
