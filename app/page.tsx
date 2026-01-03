@@ -21,7 +21,7 @@ export default function Home() {
       <GamificationBar />
       <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0a0a0f]' : 'bg-gray-50'}`}>
       {/* Hero Section */}
-      <section className="relative pt-60 pb-40 px-6 overflow-hidden">
+      <section className="relative pt-32 sm:pt-40 md:pt-48 lg:pt-60 pb-20 sm:pb-32 md:pb-40 px-4 sm:px-6 overflow-hidden">
         {/* Background Gradient */}
         <div className="absolute inset-0 hero-gradient"></div>
         
@@ -32,38 +32,38 @@ export default function Home() {
           <div className="absolute top-0 right-1/4 w-1 h-full bg-linear-to-b from-transparent via-purple-400 to-transparent -rotate-12 blur-sm"></div>
         </div>
 
-        <div className="max-w-350 mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
             <div className="text-center lg:text-left">
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-purple-600/30 backdrop-blur-sm border border-purple-500/30 mb-8">
+              <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-purple-600/30 backdrop-blur-sm border border-purple-500/30 mb-6 sm:mb-8">
                 <svg className="w-5 h-5 text-purple-300" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
-                <span className="text-white font-medium">Trusted by 50,000+ Young Investors</span>
+                <span className="text-white font-medium text-xs sm:text-sm md:text-base">Trusted by 50,000+ Young Investors</span>
               </div>
 
               {/* Main Heading */}
-              <h1 className={`text-6xl lg:text-7xl font-bold mb-6 leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+              <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 Invest Smarter,<br />
                 Grow Faster
               </h1>
 
               {/* Subheading */}
-              <p className={`text-xl mb-10 max-w-2xl mx-auto lg:mx-0 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+              <p className={`text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
                 Viniyog ONE is your AI financial mentor, built for young Indians who want clarity, not confusion.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                <button className="px-8 py-4 rounded-full gradient-purple-pink text-white font-semibold text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-12">
+                <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-full gradient-purple-pink text-white font-semibold text-base sm:text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                   </svg>
                   Start Chat with Viniyog AI
                 </button>
-                <button className={`px-8 py-4 rounded-full backdrop-blur-sm border font-semibold text-lg flex items-center justify-center gap-2 transition-colors ${theme === 'dark' ? 'bg-gray-800/50 border-gray-600 text-white hover:bg-gray-700/50' : 'bg-white/50 border-gray-300 text-gray-900 hover:bg-white/70'}`}>
+                <button className={`px-6 sm:px-8 py-3 sm:py-4 rounded-full backdrop-blur-sm border font-semibold text-base sm:text-lg flex items-center justify-center gap-2 transition-colors ${theme === 'dark' ? 'bg-gray-800/50 border-gray-600 text-white hover:bg-gray-700/50' : 'bg-white/50 border-gray-300 text-gray-900 hover:bg-white/70'}`}>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                   </svg>
@@ -72,7 +72,7 @@ export default function Home() {
               </div>
 
               {/* Feature Badges */}
-              <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-4 sm:gap-6 justify-center lg:justify-start text-sm sm:text-base">
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -247,72 +247,72 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className={`py-24 px-6 ${theme === 'dark' ? 'bg-[#0a0a0f]' : 'bg-white'}`}>
+      <section className={`py-16 sm:py-20 md:py-24 px-4 sm:px-6 ${theme === 'dark' ? 'bg-[#0a0a0f]' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className={`text-5xl lg:text-6xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 px-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
               Money feels confusing. You&apos;re not alone.
             </h2>
-            <p className={`text-xl ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+            <p className={`text-lg sm:text-xl px-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
               Viniyog ONE helps you <span className="gradient-text font-semibold">understand before you invest.</span>
             </p>
           </div>
 
           {/* Feature Cards Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {/* Card 1 - Understand your money */}
-            <div className={`rounded-3xl p-8 transition-all card-hover border ${theme === 'dark' ? 'bg-[#1a1a2e] hover:bg-[#1e1e32] border-white/5' : 'bg-gray-50 hover:bg-gray-100 border-gray-200'}`}>
-              <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all card-hover border ${theme === 'dark' ? 'bg-[#1a1a2e] hover:bg-[#1e1e32] border-white/5' : 'bg-gray-50 hover:bg-gray-100 border-gray-200'}`}>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className={`text-2xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Understand your money</h3>
-              <p className={`mb-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Track spending, savings, and investments in one place.</p>
-              <div className="w-24 h-1 bg-blue-500 rounded-full"></div>
+              <h3 className={`text-xl sm:text-2xl font-bold mb-2 sm:mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Understand your money</h3>
+              <p className={`mb-3 sm:mb-4 text-sm sm:text-base ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Track spending, savings, and investments in one place.</p>
+              <div className="w-20 sm:w-24 h-1 bg-blue-500 rounded-full"></div>
             </div>
 
             {/* Card 2 - Get AI insights */}
-            <div className={`rounded-3xl p-8 transition-all card-hover border ${theme === 'dark' ? 'bg-[#1a1a2e] hover:bg-[#1e1e32] border-white/5' : 'bg-gray-50 hover:bg-gray-100 border-gray-200'}`}>
-              <div className="w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all card-hover border ${theme === 'dark' ? 'bg-[#1a1a2e] hover:bg-[#1e1e32] border-white/5' : 'bg-gray-50 hover:bg-gray-100 border-gray-200'}`}>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className={`text-2xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Get AI insights</h3>
-              <p className={`mb-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Ask questions. Get instant, personalised financial guidance.</p>
-              <div className="w-24 h-1 bg-red-500 rounded-full"></div>
+              <h3 className={`text-xl sm:text-2xl font-bold mb-2 sm:mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Get AI insights</h3>
+              <p className={`mb-3 sm:mb-4 text-sm sm:text-base ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Ask questions. Get instant, personalised financial guidance.</p>
+              <div className="w-20 sm:w-24 h-1 bg-red-500 rounded-full"></div>
             </div>
 
             {/* Card 3 - Behavioral Nudges */}
-            <div className={`rounded-3xl p-8 transition-all card-hover border ${theme === 'dark' ? 'bg-[#1a1a2e] hover:bg-[#1e1e32] border-white/5' : 'bg-gray-50 hover:bg-gray-100 border-gray-200'}`}>
-              <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all card-hover border ${theme === 'dark' ? 'bg-[#1a1a2e] hover:bg-[#1e1e32] border-white/5' : 'bg-gray-50 hover:bg-gray-100 border-gray-200'}`}>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className={`text-2xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Behavioral Nudges</h3>
-              <p className={`mb-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Know where your money is working - and where it isn&apos;t.</p>
-              <div className="w-24 h-1 bg-green-500 rounded-full"></div>
+              <h3 className={`text-xl sm:text-2xl font-bold mb-2 sm:mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Behavioral Nudges</h3>
+              <p className={`mb-3 sm:mb-4 text-sm sm:text-base ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Know where your money is working - and where it isn&apos;t.</p>
+              <div className="w-20 sm:w-24 h-1 bg-green-500 rounded-full"></div>
             </div>
 
             {/* Card 4 - Learn as you go */}
-            <div className={`rounded-3xl p-8 transition-all card-hover border ${theme === 'dark' ? 'bg-[#1a1a2e] hover:bg-[#1e1e32] border-white/5' : 'bg-gray-50 hover:bg-gray-100 border-gray-200'}`}>
-              <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all card-hover border ${theme === 'dark' ? 'bg-[#1a1a2e] hover:bg-[#1e1e32] border-white/5' : 'bg-gray-50 hover:bg-gray-100 border-gray-200'}`}>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
                 </svg>
               </div>
-              <h3 className={`text-2xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Learn as you go</h3>
-              <p className={`mb-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Short lessons and real examples, not boring finance theory.</p>
-              <div className="w-24 h-1 bg-orange-500 rounded-full"></div>
+              <h3 className={`text-xl sm:text-2xl font-bold mb-2 sm:mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Learn as you go</h3>
+              <p className={`mb-3 sm:mb-4 text-sm sm:text-base ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Short lessons and real examples, not boring finance theory.</p>
+              <div className="w-20 sm:w-24 h-1 bg-orange-500 rounded-full"></div>
             </div>
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <div className={`px-6 py-3 rounded-full border flex items-center gap-2 ${theme === 'dark' ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <div className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full border flex items-center gap-2 text-sm ${theme === 'dark' ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-100 border-gray-300'}`}>
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>AI-Powered</span>
             </div>
@@ -327,16 +327,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-  <section className={`py-24 px-6 relative overflow-hidden ${theme === 'dark' ? 'bg-[#0f1420]' : 'bg-gray-100'}`}>
-  <div className={`max-w-7xl mx-auto relative z-10 border rounded-3xl p-8 lg:p-12 ${theme === 'dark' ? 'border-white/10' : 'border-gray-300'}`}>
+  <section className={`py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden ${theme === 'dark' ? 'bg-[#0f1420]' : 'bg-gray-100'}`}>
+  <div className={`max-w-7xl mx-auto relative z-10 border rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 ${theme === 'dark' ? 'border-white/10' : 'border-gray-300'}`}>
 
     {/* Heading */}
-    <h2 className={`text-5xl lg:text-6xl font-bold text-center mb-24 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+    <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 sm:mb-16 md:mb-24 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
       How Viniyog works?
     </h2>
 
     {/* Steps Wrapper */}
-    <div className="relative flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-24">
+    <div className="relative flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-12 md:gap-16 lg:gap-24">
 
       {/* STEP 1 */}
       <StepCircle
@@ -375,8 +375,8 @@ export default function Home() {
 </section>
 
       {/* Learning Stats Section */}
-      <section className={`py-20 px-6 ${theme === 'dark' ? 'bg-[#0a0a0f]' : 'bg-white'}`}>
-        <div className={`max-w-6xl mx-auto border rounded-3xl p-8 lg:p-12 ${theme === 'dark' ? 'border-white/10' : 'border-gray-300'}`}>
+      <section className={`py-12 sm:py-16 md:py-20 px-4 sm:px-6 ${theme === 'dark' ? 'bg-[#0a0a0f]' : 'bg-white'}`}>
+        <div className={`max-w-6xl mx-auto border rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 ${theme === 'dark' ? 'border-white/10' : 'border-gray-300'}`}>
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className={`text-4xl lg:text-5xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
