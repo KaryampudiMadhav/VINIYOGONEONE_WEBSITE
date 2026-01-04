@@ -14,9 +14,17 @@ export default function EducationPage() {
       <GamificationBar />
       <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0a0a0f]' : 'bg-gray-50'}`}>
         {/* Hero Section */}
-        <section className="relative pt-60 pb-40 px-6 overflow-hidden">
+        <section className="relative pt-32 sm:pt-40 md:pt-48 lg:pt-60 pb-20 sm:pb-32 md:pb-40 px-4 sm:px-6 overflow-hidden">
+          {/* Background GIF */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/triangle-neon-loop-video-background_7538946_small-ezgif.com-video-to-gif-converter.gif" 
+              alt="Background" 
+              className="w-full h-full object-cover opacity-50"
+            />
+          </div>
           {/* Background Gradient */}
-          <div className="absolute inset-0 hero-gradient"></div>
+          <div className="absolute inset-0 hero-gradient opacity-70 z-[1]"></div>
           
           {/* Diagonal Light Rays */}
           <div className="absolute inset-0 opacity-30">

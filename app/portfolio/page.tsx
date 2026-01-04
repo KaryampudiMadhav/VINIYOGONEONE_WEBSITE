@@ -14,9 +14,17 @@ export default function PortfolioPage() {
       <GamificationBar />
       <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0a0a0f]' : 'bg-gray-50'}`}>
         {/* Hero Section */}
-        <section className="relative pt-60 pb-40 px-6 overflow-hidden">
+        <section className="relative pt-32 sm:pt-40 md:pt-48 lg:pt-60 pb-20 sm:pb-32 md:pb-40 px-4 sm:px-6 overflow-hidden">
+          {/* Background GIF */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/triangle-neon-loop-video-background_7538946_small-ezgif.com-video-to-gif-converter.gif" 
+              alt="Background" 
+              className="w-full h-full object-cover opacity-50"
+            />
+          </div>
           {/* Background Gradient */}
-          <div className="absolute inset-0 hero-gradient"></div>
+          <div className="absolute inset-0 hero-gradient opacity-70 z-[1]"></div>
           
           {/* Diagonal Light Rays */}
           <div className="absolute inset-0 opacity-30">
@@ -25,11 +33,16 @@ export default function PortfolioPage() {
             <div className="absolute top-0 right-1/4 w-1 h-full bg-linear-to-b from-transparent via-purple-400 to-transparent -rotate-12 blur-sm"></div>
           </div>
 
-          <div className="max-w-5xl mx-auto relative z-10 text-center">
-            <h1 className={`text-5xl lg:text-6xl font-bold mb-6 leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+          <div className="max-w-7xl mx-auto relative z-10 text-center">
+            <div className="inline-block mb-6 sm:mb-8">
+              <span className="px-4 sm:px-6 py-2 sm:py-3 bg-purple-600/30 border border-purple-400/50 rounded-full text-purple-200 text-xs sm:text-sm font-medium">
+                Portfolio Analysis
+              </span>
+            </div>
+            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
               Portfolio Health Check
             </h1>
-            <p className={`text-xl mb-10 max-w-3xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+            <p className={`text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-3xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
               Analyze your investments and get AI-powered insights
             </p>
           </div>

@@ -24,7 +24,7 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation Links - Desktop */}
-        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+        <div className="hidden md:flex items-center gap-1 xl:gap-2">
           <Link 
             href="/" 
             className={`px-3 xl:px-6 py-2.5 rounded-full font-medium flex items-center gap-2 transition-colors text-sm xl:text-base ${
@@ -147,7 +147,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-colors ${theme === 'dark' ? 'bg-white/5 hover:bg-white/10' : 'bg-gray-100 hover:bg-gray-200'}`}
+            className={`md:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-colors ${theme === 'dark' ? 'bg-white/5 hover:bg-white/10' : 'bg-gray-100 hover:bg-gray-200'}`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -165,7 +165,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className={`lg:hidden border-t ${theme === 'dark' ? 'bg-[#0a0a0f]/98 border-white/10' : 'bg-white/98 border-gray-200'}`}>
+        <div className={`md:hidden border-t ${theme === 'dark' ? 'bg-[#0a0a0f]/98 border-white/10' : 'bg-white/98 border-gray-200'}`}>
           <div className="px-4 py-4 space-y-2">
             <Link 
               href="/" 
