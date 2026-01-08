@@ -11,7 +11,7 @@ export default function GamificationBar() {
   const totalXP = user?.totalXP || 0;
   const level = user?.level || 1;
   const credits = user?.credits || 0;
-  const badges = user?.badges?.length || 0;
+  const badges = user?.badgesCount || 0;
   
   // XP required for next level (100 XP per level)
   const xpPerLevel = 100;
