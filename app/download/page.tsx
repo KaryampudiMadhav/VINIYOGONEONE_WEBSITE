@@ -41,7 +41,7 @@ export default function DownloadPage() {
                   <svg className="w-4 h-4 text-purple-300" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-200' : 'text-gray-300'}`}>
+                  <span className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                     Will be available on iOS & Android
                   </span>
                 </div>
@@ -64,147 +64,111 @@ export default function DownloadPage() {
                 </button>
               </div>
 
-              {/* Right Content - Phone Mockup with Chat Animation */}
+              {/* Right Content - Phone Mockup with Static COMING SOON */}
               <div className="flex justify-center lg:justify-center lg:ml-12">
                 <div className="relative">
                   {/* Phone Frame - Larger Size */}
                   <div className="w-90 h-170 bg-linear-to-b from-gray-800 to-gray-900 rounded-[3rem] p-4 shadow-2xl border-10 border-gray-900">
                     {/* Screen */}
-                    <div className="w-full h-full bg-[#0a0a0f] rounded-[2.5rem] overflow-hidden relative flex flex-col">
+                    <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative flex flex-col">
                       {/* Status Bar */}
-                      <div className="flex items-center justify-between px-6 pt-3 pb-2 bg-[#0a0a0f] border-b border-white/5">
-                        <span className="text-white text-xs font-semibold">9:41</span>
+                      <div className="flex items-center justify-between px-6 pt-3 pb-2">
+                        <span className="text-black text-xs font-semibold">9:41</span>
                         <div className="flex items-center gap-1">
-                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
                           </svg>
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M17.778 8.222c-4.296-4.296-11.26-4.296-15.556 0A1 1 0 01.808 6.808c5.076-5.077 13.308-5.077 18.384 0a1 1 0 01-1.414 1.414zM14.95 11.05a7 7 0 00-9.9 0 1 1 0 01-1.414-1.414 9 9 0 0112.728 0 1 1 0 01-1.414 1.414zM12.12 13.88a3 3 0 00-4.242 0 1 1 0 01-1.415-1.415 5 5 0 017.072 0 1 1 0 01-1.415 1.415zM9 16a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
                           </svg>
-                          <div className="w-6 h-3 border-2 border-white rounded-sm relative">
-                            <div className="absolute right-0 top-0 bottom-0 w-1 bg-white"></div>
+                          <div className="w-6 h-3 border-2 border-black rounded-sm relative">
+                            <div className="absolute right-0 top-0 bottom-0 w-1 bg-black"></div>
                           </div>
                         </div>
                       </div>
 
-                      {/* Chat Header */}
-                      <div className="px-4 py-3 bg-[#1a1a2e] border-b border-white/5 flex items-center gap-3">
-                        <div className="w-10 h-10 gradient-purple-pink rounded-full flex items-center justify-center font-bold text-white">
-                          V
-                        </div>
-                        <div>
-                          <div className="text-white text-sm font-semibold">ViniyogOne AI</div>
-                          <div className="text-green-400 text-xs flex items-center gap-1">
-                            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                            Online
+                      {/* Top Navigation Bar */}
+                      <div className="px-4 py-3 flex items-center justify-between">
+                        <button className="p-2">
+                          <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                          </svg>
+                        </button>
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 gradient-purple-pink rounded-lg flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">V</span>
                           </div>
+                        </div>
+                        <button className="p-2">
+                          <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                          </svg>
+                        </button>
+                      </div>
+
+                      {/* Main Content Area with COMING SOON */}
+                      <div className="flex-1 flex flex-col items-center justify-center px-6 pb-20">
+                        <div className="text-center mb-8">
+                          <div className="inline-block mb-4">
+                            <div className="w-20 h-20 gradient-purple-pink rounded-2xl flex items-center justify-center">
+                              <span className="text-white font-bold text-3xl">V</span>
+                            </div>
+                          </div>
+                          <h2 className="text-6xl font-extrabold mb-2" style={{background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>COMING</h2>
+                          <h2 className="text-6xl font-extrabold" style={{background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>SOON</h2>
                         </div>
                       </div>
 
-                      {/* Chat Messages Area with Auto-Scroll */}
-                      <div className="flex-1 overflow-hidden px-4 py-4 relative">
-                        <div className="space-y-3 animate-chatScroll">
-                          {/* User Message 1 */}
-                          <div className="flex justify-end">
-                            <div className="bg-linear-to-r from-purple-600 to-pink-600 rounded-2xl rounded-tr-sm px-4 py-2.5 max-w-[85%]">
-                              <p className="text-white text-sm">I have ₹5000, what should I do?</p>
-                            </div>
-                          </div>
-
-                          {/* AI Response 1 */}
-                          <div className="flex justify-start">
-                            <div className="bg-[#1a1a2e] rounded-2xl rounded-tl-sm px-4 py-2.5 max-w-[85%] border border-white/10">
-                              <p className="text-white text-sm leading-relaxed">
-                                Great start! For ₹5000, I suggest a mutual fund SIP. It&apos;s simple, low-risk, and perfect for beginners. 💡
-                              </p>
-                            </div>
-                          </div>
-
-                          {/* User Message 2 */}
-                          <div className="flex justify-end">
-                            <div className="bg-linear-to-r from-purple-600 to-pink-600 rounded-2xl rounded-tr-sm px-4 py-2.5 max-w-[85%]">
-                              <p className="text-white text-sm">Should I invest in stocks?</p>
-                            </div>
-                          </div>
-
-                          {/* AI Response 2 */}
-                          <div className="flex justify-start">
-                            <div className="bg-[#1a1a2e] rounded-2xl rounded-tl-sm px-4 py-2.5 max-w-[85%] border border-white/10">
-                              <p className="text-white text-sm leading-relaxed">
-                                Before stocks, build an emergency fund (3-6 months expenses). Then start with index funds for diversification. 📊
-                              </p>
-                            </div>
-                          </div>
-
-                          {/* User Message 3 */}
-                          <div className="flex justify-end">
-                            <div className="bg-linear-to-r from-purple-600 to-pink-600 rounded-2xl rounded-tr-sm px-4 py-2.5 max-w-[85%]">
-                              <p className="text-white text-sm">What&apos;s a good saving goal?</p>
-                            </div>
-                          </div>
-
-                          {/* AI Response 3 */}
-                          <div className="flex justify-start">
-                            <div className="bg-[#1a1a2e] rounded-2xl rounded-tl-sm px-4 py-2.5 max-w-[85%] border border-white/10">
-                              <p className="text-white text-sm leading-relaxed">
-                                Aim to save 20% of your income. Start small if needed - even ₹1000/month builds discipline and grows over time! 💪
-                              </p>
-                            </div>
-                          </div>
-
-                          {/* User Message 4 */}
-                          <div className="flex justify-end">
-                            <div className="bg-linear-to-r from-purple-600 to-pink-600 rounded-2xl rounded-tr-sm px-4 py-2.5 max-w-[85%]">
-                              <p className="text-white text-sm">How do I track my expenses?</p>
-                            </div>
-                          </div>
-
-                          {/* AI Response 4 */}
-                          <div className="flex justify-start">
-                            <div className="bg-[#1a1a2e] rounded-2xl rounded-tl-sm px-4 py-2.5 max-w-[85%] border border-white/10">
-                              <p className="text-white text-sm leading-relaxed">
-                                Use the 50-30-20 rule: 50% needs, 30% wants, 20% savings. I can help you categorize and optimize! ✨
-                              </p>
-                            </div>
-                          </div>
-
-                          {/* User Message 5 */}
-                          <div className="flex justify-end">
-                            <div className="bg-linear-to-r from-purple-600 to-pink-600 rounded-2xl rounded-tr-sm px-4 py-2.5 max-w-[85%]">
-                              <p className="text-white text-sm">Is FD a good option?</p>
-                            </div>
-                          </div>
-
-                          {/* AI Response 5 */}
-                          <div className="flex justify-start">
-                            <div className="bg-[#1a1a2e] rounded-2xl rounded-tl-sm px-4 py-2.5 max-w-[85%] border border-white/10">
-                              <p className="text-white text-sm leading-relaxed">
-                                FDs are safe for short-term goals. For long-term wealth, mutual funds typically give better inflation-adjusted returns. 📈
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Chat Input */}
-                      <div className="p-3 bg-[#1a1a2e] border-t border-white/5">
-                        <div className="flex items-center gap-2 bg-[#0a0a0f] rounded-full px-4 py-2.5 border border-white/10">
+                      {/* Bottom Input Area */}
+                      <div className="px-4 pb-4">
+                        <div className="flex items-center gap-2 bg-gray-100 rounded-full px-4 py-3 border border-gray-200">
+                          <button className="p-1">
+                            <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                            </svg>
+                          </button>
                           <input 
                             type="text" 
-                            placeholder="Ask anything about money..." 
-                            className="flex-1 bg-transparent text-white text-sm outline-none placeholder-gray-500"
+                            placeholder="Ask your question" 
+                            className="flex-1 bg-transparent text-gray-900 text-sm outline-none placeholder-gray-500"
                             disabled
                           />
-                          <div className="w-8 h-8 gradient-purple-pink rounded-full flex items-center justify-center shrink-0">
-                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                          <button className="p-1">
+                            <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                             </svg>
-                          </div>
+                          </button>
                         </div>
+                      </div>
+
+                      {/* Bottom Navigation Bar */}
+                      <div className="flex items-center justify-around py-3 border-t border-gray-200">
+                        <button className="flex flex-col items-center">
+                          <div className="px-6 py-1.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 mb-1">
+                            <span className="text-white text-xs font-medium">Trading</span>
+                          </div>
+                        </button>
+                        <button className="p-2">
+                          <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                        </button>
+                        <button className="p-2">
+                          <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </button>
+                        <button className="p-2">
+                          <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </button>
                       </div>
 
                       {/* Bottom Indicator */}
-                      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full"></div>
+                      <div className="pb-2">
+                        <div className="mx-auto w-32 h-1 bg-gray-300 rounded-full"></div>
+                      </div>
                     </div>
                   </div>
 
@@ -288,187 +252,6 @@ export default function DownloadPage() {
                   Invest without any hidden charges
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Scan for Early Registration Section */}
-        <section className={`py-20 px-6 ${theme === 'dark' ? 'bg-[#0a0a0f]' : 'bg-gray-50'}`}>
-          <div className="max-w-5xl mx-auto">
-            <div className={`rounded-3xl border p-12 ${theme === 'dark' ? 'bg-gray-800/30 border-white/10' : 'bg-white border-gray-200'}`}>
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                {/* Left Content */}
-                <div>
-                  <h2 className={`text-3xl lg:text-4xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                    Scan for Early Registration
-                  </h2>
-                  <p className={`mb-8 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Use your phone&apos;s camera to scan the QR code and download Vinyog instantly
-                  </p>
-
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Quick & Easy Setup</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>₹500 Welcome Bonus</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>No Hidden Charges</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Content - QR Code */}
-                <div className="flex flex-col items-center">
-                  <div className={`w-64 h-64 rounded-3xl flex items-center justify-center ${theme === 'dark' ? 'bg-white' : 'bg-gray-100'}`}>
-                    <div className="w-48 h-48 bg-gray-900 rounded-2xl flex items-center justify-center">
-                      <div className="grid grid-cols-3 gap-2 p-4">
-                        {/* QR Code Pattern */}
-                        {[...Array(9)].map((_, i) => (
-                          <div key={i} className="w-12 h-12 bg-white rounded"></div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className={`mt-4 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Scan with your phone camera
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* What Users Are Saying Section */}
-        <section className={`py-20 px-6 ${theme === 'dark' ? 'bg-[#0a0a0f]' : 'bg-white'}`}>
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className={`text-4xl lg:text-5xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                What Users Are Saying
-              </h2>
-              <p className={`text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                Join thousands of happy investors
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Testimonial 1 */}
-              <div className={`rounded-2xl border p-6 ${theme === 'dark' ? 'bg-gray-800/30 border-white/10' : 'bg-white border-gray-200'}`}>
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className={`mb-4 text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                  &quot;Super beginner-friendly!&quot;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full"></div>
-                  <div>
-                    <p className={`font-semibold text-sm ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Aman</p>
-                    <p className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-500'}`}>Age 24</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Testimonial 2 */}
-              <div className={`rounded-2xl border p-6 ${theme === 'dark' ? 'bg-gray-800/30 border-white/10' : 'bg-white border-gray-200'}`}>
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className={`mb-4 text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                  &quot;Finally a site that talks like I do.&quot;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
-                  <div>
-                    <p className={`font-semibold text-sm ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Sneha</p>
-                    <p className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-500'}`}>Age 22</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Testimonial 3 */}
-              <div className={`rounded-2xl border p-6 ${theme === 'dark' ? 'bg-gray-800/30 border-white/10' : 'bg-white border-gray-200'}`}>
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className={`mb-4 text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                  &quot;I use Vinyog ONE before every decision.&quot;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full"></div>
-                  <div>
-                    <p className={`font-semibold text-sm ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Rahul</p>
-                    <p className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-500'}`}>Age 28</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className={`py-20 px-6 ${theme === 'dark' ? 'bg-[#0a0a0f]' : 'bg-gray-50'}`}>
-          <div className="max-w-4xl mx-auto">
-            <div className="rounded-3xl p-12 text-center gradient-purple-pink">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </div>
-              
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
-                Ready to start your financial journey?
-              </h2>
-              <p className="text-lg mb-8 text-white/90">
-                Download Vinyog ONE today and get instant access to your AI financial mentor
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                <button className="px-8 py-4 bg-white rounded-xl text-gray-900 font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                  </svg>
-                  Download on<br />App Store
-                </button>
-                <button className="px-8 py-4 bg-white rounded-xl text-gray-900 font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                  </svg>
-                  Get it on<br />Google Play
-                </button>
-              </div>
-
-              <p className="text-sm text-white/80">
-                Free to download • No credit card required • Available on iOS & Android
-              </p>
             </div>
           </div>
         </section>

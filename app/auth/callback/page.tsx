@@ -13,23 +13,63 @@ function AuthCallbackContent() {
     const error = searchParams.get('error');
 
     if (error) {
-      // Redirect to login with error message
-      router.push(`/login?error=${error}`);
+      // Handle OAuth errors with user-friendly messages
+      const errorMessages: Record<string, string> = {
+        'google_auth_failed': 'Google sign-in failed. Please try again.',
+        'facebook_auth_failed': 'Facebook sign-in failed. Please try again.',
+        'linkedin_auth_failed': 'LinkedIn sign-in failed. Please try again.',
+        'twitter_auth_failed': 'Twitter sign-in failed. Please try again.',
+        'instagram_auth_failed': 'Instagram sign-in failed. Please try again.',
+        'auth_failed': 'Authentication failed. Please try again.'
+      };
+      
+      const message = errorMessages[error] || 'Authentication failed. Please try again.';
+      router.push(`/login?error=${encodeURIComponent(message)}`);
       return;
     }
 
     if (token && refreshToken) {
-      // Store tokens in localStorage
-      localStorage.setItem('token', token);
-      localStorage.setItem('refreshToken', refreshToken);
-      
-      // Redirect to home/dashboard
-      router.push('/');
+      try {
+        // Store tokens in localStorage
+        localStorage.setItem('token', token);
+        localStorage.setItem('refreshToken', refreshToken);
+        
+        // Optionally fetch user profile immediately
+        fetchUserProfile(token);
+        
+        // Redirect to home/dashboard
+        router.push('/');
+      } catch (err) {
+        console.error('Error saving authentication tokens:', err);
+        router.push('/login?error=token_save_failed');
+      }
     } else {
       // No tokens found, redirect to login
       router.push('/login?error=auth_failed');
     }
   }, [router, searchParams]);
+
+  const fetchUserProfile = async (token: string) => {
+    try {
+      // Get API URL from environment variable
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+      
+      const response = await fetch(`${apiUrl}/api/auth/me`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Store user data in localStorage for quick access
+        localStorage.setItem('user', JSON.stringify(data.data.user));
+      }
+    } catch (error) {
+      console.error('Error fetching user profile:', error);
+      // Non-critical error, don't block authentication
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 flex items-center justify-center px-6">

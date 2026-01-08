@@ -75,24 +75,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Chat Auto-Scroll Animation */
-@keyframes chatScroll {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
-}
-
-.animate-chatScroll {
-  animation: chatScroll 15s linear infinite;
-}
-
-.animate-chatScroll:hover {
-  animation-play-state: paused;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
