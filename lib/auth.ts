@@ -1,5 +1,5 @@
 // Authentication utilities
-import apiClient, { apiConfig } from './api';
+import apiClient, { apiConfig, tokenManager } from './api';
 
 export interface SignupData {
   firstName: string;
@@ -11,7 +11,8 @@ export interface SignupData {
 
 export interface LoginData {
   email: string;
-  password: string;
+  password?: string;
+  otp?: string;
 }
 
 export interface User {
@@ -23,33 +24,97 @@ export interface User {
   credits: number;
   currentStreak: number;
   longestStreak: number;
-  badges: any[];
+  totalXP: number;
+  level: number;
+  badgesCount: number;
+  lastLoginDate: string | null;
+  phoneNumber?: string;
+  dateOfBirth?: string;
 }
 
 export const authService = {
   // Send OTP for email verification
-  async sendOTP(email: string) {
-    return apiClient.post(apiConfig.endpoints.sendOTP, { email });
+  async sendOTP(email: string, purpose: 'signup' | 'login' | 'reset-password' = 'signup') {
+    return apiClient.post(apiConfig.endpoints.sendOTP, { email, purpose });
   },
 
   // Verify OTP
-  async verifyOTP(email: string, otp: string) {
-    return apiClient.post(apiConfig.endpoints.verifyOTP, { email, otp });
+  async verifyOTP(email: string, otp: string, purpose: string) {
+    return apiClient.post(apiConfig.endpoints.verifyOTP, { email, otp, purpose });
+  },
+
+  // Resend verification email
+  async resendVerification(email: string) {
+    return apiClient.post(apiConfig.endpoints.resendVerification, { email });
   },
 
   // Register new user
   async signup(data: SignupData) {
-    return apiClient.post(apiConfig.endpoints.signup, data);
+    const response = await apiClient.post(apiConfig.endpoints.signup, data);
+    if (response.success && response.data) {
+      tokenManager.setToken(response.data.token);
+      tokenManager.setRefreshToken(response.data.refreshToken);
+      tokenManager.saveUser(response.data.user);
+    }
+    return response;
   },
 
   // Login user
   async login(data: LoginData) {
-    return apiClient.post(apiConfig.endpoints.login, data);
+    const response = await apiClient.post(apiConfig.endpoints.login, data);
+    if (response.success && response.data) {
+      tokenManager.setToken(response.data.token);
+      tokenManager.setRefreshToken(response.data.refreshToken);
+      tokenManager.saveUser(response.data.user);
+    }
+    return response;
+  },
+
+  // Forgot password
+  async forgotPassword(email: string) {
+    return apiClient.post(apiConfig.endpoints.forgotPassword, { email });
+  },
+
+  // Reset password
+  async resetPassword(email: string, otp: string, newPassword: string) {
+    return apiClient.post(apiConfig.endpoints.resetPassword, { email, otp, newPassword });
+  },
+
+  // Get current user
+  async getCurrentUser() {
+    return apiClient.get(apiConfig.endpoints.me);
+  },
+
+  // Refresh token
+  async refreshToken() {
+    const refreshToken = tokenManager.getRefreshToken();
+    if (!refreshToken) throw new Error('No refresh token available');
+    
+    const response = await apiClient.post(apiConfig.endpoints.refreshToken, { refreshToken });
+    if (response.success && response.data) {
+      tokenManager.setToken(response.data.token);
+      tokenManager.setRefreshToken(response.data.refreshToken);
+    }
+    return response;
   },
 
   // Logout user
   async logout() {
-    return apiClient.post(apiConfig.endpoints.logout);
+    try {
+      await apiClient.post(apiConfig.endpoints.logout);
+    } finally {
+      tokenManager.removeTokens();
+    }
+  },
+  
+  // Check if user is authenticated
+  isAuthenticated() {
+    return !!tokenManager.getToken();
+  },
+  
+  // Get OAuth providers status
+  async getOAuthStatus() {
+    return apiClient.get(apiConfig.endpoints.oauthStatus);
   },
 
   // Get current user profile
