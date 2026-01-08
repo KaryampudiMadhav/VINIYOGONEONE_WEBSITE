@@ -18,7 +18,7 @@ export interface StreakHistory {
 export const streakService = {
   // Get current streak information
   async getStreak(): Promise<StreakData> {
-    return apiClient.get(apiConfig.endpoints.getStreak);
+    return apiClient.get(apiConfig.endpoints.currentStreak);
   },
 
   // Update streak (mark activity for today)
@@ -28,7 +28,7 @@ export const streakService = {
 
   // Get streak history
   async getHistory(): Promise<StreakHistory[]> {
-    return apiClient.get(apiConfig.endpoints.getHistory);
+    return apiClient.get(apiConfig.endpoints.streakHistory);
   },
 };
 

@@ -26,6 +26,9 @@ export const apiConfig = {
     // Streak endpoints
     currentStreak: '/api/streaks/current',
     streakHistory: '/api/streaks/history',
+    getStreak: '/api/streaks/current',
+    updateStreak: '/api/streaks/update',
+    getHistory: '/api/streaks/history',
   }
 };
 
